@@ -8,7 +8,7 @@ The work develops and validates a multi-criteria, lexicographically ranked, boot
 
 The repository state at manuscript submission is tagged **`submission-microbial-genomics`** (commit d75fb5077fdd3c7c4ba55ef38134ebfabe008a66, dated 20260509). All results, figures, and tables in the submitted manuscript can be reproduced from the code at this snapshot.
 
-GitHub release: `[https://github.com/MapouSeraphin/paper1-isnv-calibration/releases/tag/TAG_NAME]`
+GitHub release: https://github.com/MapouSeraphin/paper1_isnv_calibration/releases/tag/submission-microbial-genomics 
 
 Zenodo archive (post-acceptance): `[DOI]`
 
