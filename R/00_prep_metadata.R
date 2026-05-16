@@ -39,7 +39,6 @@
 #   the same patient (1:many join warning territory), canonical wins and
 #   the typo'd duplicate is excluded from gh_variants.
 #
-# 2026-05-01 SCOPE: Florida code paths removed (Paper 1 is Ghana-only).
 #
 # Sources:
 #   D2_longitudinal.rds   -- sample-unit, n_expected = 97 (pass band 97-115).
