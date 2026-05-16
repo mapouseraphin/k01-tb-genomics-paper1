@@ -12,10 +12,10 @@
 #   - MAF binning: 4 bins [0.02,0.05), [0.05,0.10), [0.10,0.25), [0.25,0.45]
 #                  Sens C (merged_low) retired -- bin-drop policy makes it moot
 #   - Calibration set: M0 within-visit replicate pairs only
-#   - Calibration selection: lex (canonical) and Pareto (parallel sensitivity)
+#   - Calibration selection: lex (canonical) 
 #   - Stage 2: bootstrap stabilization (B = 1000)
 #   - Three-tier ladder: looser / primary / tighter (no sentinel)
-#   - Guards: MIN_EVAL_PAIRS = 5, MAX_PROP_BOTH0 = 0.90
+#   - Guards: MIN_EVAL_PAIRS = 5, MAX_PROP_BOTH0 = 0.95
 #
 # To run a sensitivity variant: flip the relevant flag below, re-run the
 # pipeline. Output directories carry the active spec tag automatically;
