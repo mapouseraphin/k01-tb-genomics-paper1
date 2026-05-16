@@ -24,8 +24,9 @@ authors:
   - family-names: "Omari"
     given-names: "Michael Amo"
 version: 1.0.0
-date-released: 2026-05-22
+date-released: 2026-05-16
 license: MIT
+doi: "10.5281/zenodo.20246996"
 repository-code: "https://github.com/k01-tb-genomics/paper1-isnv-detection-calibration"
 keywords:
   - tuberculosis
