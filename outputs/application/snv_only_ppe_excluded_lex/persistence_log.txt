@@ -1,0 +1,51 @@
+[application_persistence_analysis] Spec tag: snv_only_ppe_excluded_lex
+Output dir: outputs/application/snv_only_ppe_excluded_lex
+
+Cohort (visit_label in M0/M1/M2):
+  Samples : 282
+  Patients: 97
+
+Samples per visit:
+  visit_label n_samples
+1          M0       213
+2          M1        52
+3          M2        17
+
+Eligibility for persistence analysis:
+  Patients with M0:                    95
+  Patients with M0 AND >= 1 post-M0:   36 (eligible)
+  Patients without post-M0 sample:     59 (excluded from per-iSNV rates)
+
+Table 5 (persistence by HIV):
+       stratum n_patients n_with_persistent pct_with_persistent
+1 All eligible         36                 1                 2.8
+2         HIV-         33                 1                 3.0
+3         HIV+          3                 0                 0.0
+  median_persistence_rate total_M0_isnv total_persistent_isnv
+1                       0             6                     2
+2                       0             6                     2
+3                      NA             0                     0
+  pooled_per_isnv_rate
+1                0.333
+2                0.333
+3                   NA
+
+Supp Table S4 (trajectory categories):
+           HIV     category n  prop
+1 All eligible M0 + M1 only 2 0.333
+2 All eligible      M0 only 4 0.667
+3         HIV-      M0 only 4 0.667
+4         HIV- M0 + M1 only 2 0.333
+
+Supp Table S5 (persistence by MAF bin):
+       maf_bin          HIV n_M0_isnv n_persistent per_isnv_rate
+1 [0.02, 0.05) All eligible         3            0         0.000
+2 [0.25, 0.45] All eligible         3            2         0.667
+3 [0.02, 0.05)         HIV-         3            0         0.000
+4 [0.25, 0.45]         HIV-         3            2         0.667
+
+[application_persistence_analysis] Outputs written to outputs/application/snv_only_ppe_excluded_lex/
+  table5_persistence_by_hiv.csv  + .tex
+  supp_table_S4_trajectory_categories.csv
+  supp_table_S5_persistence_by_maf_bin.csv
+  figure5_persistence_trajectories.pdf

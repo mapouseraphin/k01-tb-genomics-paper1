@@ -1,0 +1,5 @@
+HIV,category,n,prop
+All eligible,M0 + M1 only,2,0.333
+All eligible,M0 only,4,0.667
+HIV-,M0 only,4,0.667
+HIV-,M0 + M1 only,2,0.333

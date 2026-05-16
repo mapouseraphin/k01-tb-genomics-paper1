@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: If you use this software, please cite both the software (this record) and the associated paper."
+title: "Replicate-anchored calibration of within-host single nucleotide variant detection in *Mycobacterium tuberculosis* whole genome sequencing"
+authors:
+  - family-names: "Séraphin"
+    given-names: "Marie Nancy"
+    orcid: "https://orcid.org/0000-0002-2120-6011"
+  - family-names: "Afriye-Mensah"
+    given-names: "Sandra Jane"
+  - family-names: "Asare-Baah"
+    given-names: "Michael"
+  - family-names: "Chariker"
+    given-names: "Julia"
+  - family-names: "Domotey"
+    given-names: "Charles"
+  - family-names: "Kwarteng"
+    given-names: "Ernest"
+  - family-names: "Zoungrana"
+    given-names: "Magalie"
+  - family-names: "Mireku Appah"
+    given-names: "Sheila"
+  - family-names: "Ganu"
+    given-names: "Honesty"
+  - family-names: "Omari"
+    given-names: "Michael Amo"
+version: 1.0.0
+date-released: 2026-05-22
+license: MIT
+repository-code: "https://github.com/k01-tb-genomics/paper1-isnv-detection-calibration"
+keywords:
+  - tuberculosis
+  - within-host diversity
+  - iSNV calibration
+  - variant filtering
+  - Mycobacterium tuberculosis
+preferred-citation:
+  type: article
+  title: "Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing"
+  authors:
+    - family-names: "Séraphin"
+      given-names: "Marie Nancy"
+  journal: "Microbial Genomics"
+  year: 2026

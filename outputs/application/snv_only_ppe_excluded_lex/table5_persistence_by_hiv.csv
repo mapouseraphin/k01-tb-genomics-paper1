@@ -1,0 +1,4 @@
+stratum,n_patients,n_with_persistent,pct_with_persistent,median_persistence_rate,total_M0_isnv,total_persistent_isnv,pooled_per_isnv_rate
+All eligible,36,1,2.8,0,6,2,0.333
+HIV-,33,1,3,0,6,2,0.333
+HIV+,3,0,0,NA,0,0,NA
