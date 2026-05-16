@@ -1,7 +1,7 @@
 # =============================================================================
 # run_paper1.R
 #
-# Paper 1 (Microbial Genomics) reproducibility entry point.
+# Paper 1 reproducibility entry point.
 #
 # Reproduces the calibration and application pipeline presented in the
 # manuscript. Deterministic given the seed pinned in 00_pipeline_config.R.

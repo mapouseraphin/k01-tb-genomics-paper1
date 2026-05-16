@@ -1,4 +1,83 @@
-.DS_Store
-Thumbs.db
-*.tmp
+# =============================================================================
+# .gitignore — Paper 1 (Microbial Genomics) repository
+# =============================================================================
+
+# ---- Sensitive sequencing data — NEVER commit -------------------------------
+data_raw/
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bam.bai
+*.bai
+*.sam
+*.cram
+*.crai
+*.vcf
+*.vcf.gz
+*.bcf
+*.tbi
+*.idx
+*.rds
+
+# ---- Pipeline-generated, large, regenerable ---------------------------------
+data_derived/
+logs/
+
+# Uncomment the next line if outputs/ is too large for git.
+# Otherwise keep it tracked so reviewers can verify against the manuscript
+# without running `make all`.
+# outputs/
+
+# ---- Run artifacts ----------------------------------------------------------
+*.log
+paper1_manifest.sha256
+
+# ---- R session and editor cruft ---------------------------------------------
+.Rhistory
+.RData
+.Rapp.history
+.Renviron
+.Rproj.user/
+*.Rproj
+
+# ---- renv (R package management) --------------------------------------------
+# Keep renv.lock and renv/activate.R; ignore everything else under renv/
+renv/library/
+renv/local/
+renv/cellar/
+renv/staging/
+renv/python/
+renv/sandbox/
+
+# ---- Editor / IDE -----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
 *~
+*.bak
+
+# ---- OS junk ----------------------------------------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
+
+# ---- Credentials / environment ----------------------------------------------
+.env
+.env.local
+*.pem
+*.key
+secrets.yml
+config.local.*
+
+# ---- Misc temp --------------------------------------------------------------
+*.tmp
+*.temp
+tmp/
+temp/

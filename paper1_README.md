@@ -1,6 +1,6 @@
 # Paper 1 — Replicate-Anchored iSNV Detection Calibration in *Mycobacterium tuberculosis*
 
-This repository accompanies the manuscript *"Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing"* (Séraphin et al., submitted to *Microbial Genomics* as a Short Communication, May 2026).
+This repository accompanies the manuscript in preparation *"Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing"* (Séraphin et al., May 2026).
 
 The work develops and validates a multi-criteria, lexicographically ranked, bootstrap-stabilized calibration framework for per-specimen intra-host single-nucleotide variant (iSNV) detection in *M. tuberculosis* whole-genome sequencing. Within-patient replicate sputum pairs from a pre-treatment TB cohort in Accra, Ghana, are scored across the joint (DP, AD, MAF) grid and ranked by reproducibility. Resulting thresholds are reported as a three-tier sensitivity ladder and applied to the full 97-patient cohort.
 
@@ -28,59 +28,69 @@ The calibrated rule was applied to **282 cultured sputum specimens from 97 pre-t
 
 ## Reproducibility
 
-- **R version:** 4.5.1
+- **R version:** 4.6.0
 - **Random seed:** `20260428` (used for the calibration bootstrap and any other stochastic step).
 
 To reproduce: clone the repository, install the listed package versions and run `run_pipeline.R` from the repository root. The pipeline regenerates derived data tables, main figures, and supplementary materials in the output directory.
 
 ## Data availability
 
-- **Raw sequencing reads** (282 paired-end Illumina WGS samples) deposited at NCBI SRA under BioProject PRJNA1466981. Per-sample accessions and metadata in `Supplementary_Data_S1.csv` (and listed in the manuscript supplement).
+- **Raw sequencing reads** (282 paired-end Illumina WGS samples) deposited at NCBI SRA under BioProject `PRJNA1466981`. Per-sample accessions and metadata in `Supplementary_Data_S1.csv`.
 - **Reference genome:** *M. tuberculosis* H37Rv, GenBank accession NC_000962.3.
-- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data_derived`.
+- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data/processed/`.
 
 ## Repository structure
 
 ```
-run_paper1.R                         Master orchestrator (runs all 3 specs)
-R/                                   Pipeline source
-  ├── 00_pipeline_config.R           Canonical flags, tag construction, paths
-  ├── 00_prep_metadata.R             Cohort cleaning, metadata harmonization
-  ├── 01_build_cal_pairs.R           M0 within-visit replicate-pair construction
-  ├── 02_calibrate_lexicographic.R   Stage 1: lex grid search (canonical)
-  ├── 02b_calibration_bootstrap.R    Stage 2: B=1000 selection-stability bootstrap
-  ├── 03_apply_thresholds.R          Apply calibrated rule to full cohort
-  ├── application_per_patient_prevalence.R   Per-patient detection prevalence
-  ├── application_persistence_analysis.R     Longitudinal persistence (M0→M1/M2)
-  ├── make_paper1_tables_1to3.R      Tables 1, 2, 3
-  └── 09_make_calibration_selection_figure_table.R   Figure 1, Table 4
-
-manuscript/
-  ├── calibration_validation_manuscript_20260506.docx
-  └── supplement/
-
-data_derived/                        Per-spec derived data (auto-generated)
-  ├── 00_metadata/                   Spec-independent
-  ├── 00_variants/                   Spec-independent (canonical universe)
-  ├── 00_variants_ppe_excluded/      Spec-independent (Sens A universe)
-  ├── 01_calibration_<cal_tag>/      Spec-tagged: thresholds, grid, bootstrap/
-  └── 03_thresholded_<apply_tag>/    Spec-tagged: gh_variants_thr_*.rds
-
-outputs/                              Final tables, figures, logs
-  ├── tables/<lca_tag>/
-  ├── figures/<lca_tag>/
-  ├── supplemental/<lca_tag>/
-  └── orchestrator_logs/
-
-README.md                             This file
-LICENSE                               MIT
+.
+├── run_paper1.R                                       Orchestrator entry point
+├── Makefile                                           Named targets (make all, verify, etc.)
+├── paper1_README.md                                   This file
+├── LICENSE                                            MIT
+├── CITATION.cff                                       Machine-readable citation metadata
+├── .gitignore
+│
+├── R/                                                 Pipeline source
+│   ├── 00_pipeline_config.R                           Flags, tag construction, paths
+│   ├── build_sample_metadata_v2.R                     Sample metadata harmonization
+│   ├── 00_prep_metadata.R                             Cohort cleaning (Table 1)
+│   ├── isnv_helpers.R                                 Shared helper functions
+│   ├── 01_build_cal_pairs.R                           M0 within-visit replicate-pair construction
+│   ├── 02_calibrate_lexicographic.R                   Lexicographic threshold selection (Stage 1)
+│   ├── 02b_calibration_bootstrap.R                    B=1000 selection-stability bootstrap (Stage 2)
+│   ├── 02c_depth_concordance_diagnostic.R             Depth-concordance diagnostic (Figure S1)
+│   ├── 03_apply_thresholds.R                          Apply calibrated rule to full cohort
+│   ├── 09_make_calibration_selection_figure_table.R   Figure 1, Table 1
+│   ├── application_per_patient_prevalence.R           Table 2
+│   ├── application_logistic_regression.R              Table 3 (logistic regression)
+│   └── application_persistence_analysis.R             Table 5 (persistence), Tables S4–S5, Figure 5
+│
+├── manuscript/                                        Manuscript draft and supplement
+│   ├── calibration_validation_manuscript.docx
+│   └── supplement/
+│
+├── data_derived/                                      Auto-generated by `make all` (gitignored)
+│   ├── 00_metadata/                                   Cohort & sample metadata
+│   ├── 00_variants/                                   Filtered variant universe
+│   ├── 01_calibration_<tag>/                          Calibration grid, thresholds
+│   │   └── bootstrap/                                 Selection-stability bootstrap
+│   └── 03_thresholded_<tag>/                          Per-sample detection indicators
+│
+├── outputs/                                           Final figures, tables (gitignored)
+|   ├── application/<tag>/                             Figure 2
+│   ├── tables/<tag>/                                  Tables 2, 4, 5
+│   ├── figures/<tag>/                                 Figures 2, 5, S
+│   └── supplemental/<tag>/                            Supplementary tables S4, S5
+│
+└── logs/                                              Per-run timestamped logs (gitignored)
 ```
 
 ## Citation
 
 If you use this work, please cite:
 
-> Séraphin MN, Afriyie-Mensah JS, Asare-Baah M, Chariker J, Domotey C, Kwarteng E, Zoungrana M, Mireku Appah S, Ganu H, Amo Omari M. Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing. *Microbial Genomics* (submitted, 2026). DOI: `[DOI when assigned]`
+> Séraphin MN, Afriyie-Mensah JS, Asare-Baah M, Chariker J, Domotey C, Kwarteng E, Zoungrana M, Mireku Appah S, Ganu H, Amo Omari M. Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing. DOI: `[DOI when assigned]`
+
 
 ## Funding
 
@@ -97,5 +107,5 @@ Email:nseraphin@ufl.edu
 
 ## License
 
-MIT, CC-BY-4.0 
+MIT, CC-BY-4.0 — see `LICENSE` file. 
 ---
