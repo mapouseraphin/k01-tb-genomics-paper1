@@ -35,9 +35,9 @@ To reproduce: clone the repository, install the listed package versions and run 
 
 ## Data availability
 
-- **Raw sequencing reads** (282 paired-end Illumina WGS samples) deposited at NCBI SRA under BioProject `[PRJNA######]`. Per-sample accessions and metadata in `Supplementary_Table_S1.csv` (and listed in the manuscript supplement).
+- **Raw sequencing reads** (282 paired-end Illumina WGS samples) deposited at NCBI SRA under BioProject PRJNA1466981. Per-sample accessions and metadata in `Supplementary_Data_S1.csv` (and listed in the manuscript supplement).
 - **Reference genome:** *M. tuberculosis* H37Rv, GenBank accession NC_000962.3.
-- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data/processed/`.
+- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data_derived`.
 
 ## Repository structure
 
@@ -76,17 +76,11 @@ README.md                             This file
 LICENSE                               MIT
 ```
 
-*(Update file listing if directory structure differs at commit time.)*
-
 ## Citation
 
 If you use this work, please cite:
 
 > Séraphin MN, Afriyie-Mensah JS, Asare-Baah M, Chariker J, Domotey C, Kwarteng E, Zoungrana M, Mireku Appah S, Ganu H, Amo Omari M. Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing. *Microbial Genomics* (submitted, 2026). DOI: `[DOI when assigned]`
-
-This calibration is also applied in the companion methods paper:
-
-> Séraphin MN, et al. (in preparation). Operationalizing covariate-differential outcome misclassification for depth-dependent within-host pathogen sequencing outcomes: HIV and *M. tuberculosis* iSNV detection across cohorts. *American Journal of Epidemiology*. Repository: `github.com/MapouSeraphin/paper2-isnv-transport`.
 
 ## Funding
 
@@ -103,21 +97,5 @@ Email:nseraphin@ufl.edu
 
 ## License
 
-MIT, CC-BY-4.0 — see `LICENSE` file. Recommended: MIT or BSD-3-Clause for code; CC-BY-4.0 for the manuscript draft and figures.
-
+MIT, CC-BY-4.0 
 ---
-
-## Placeholder summary (delete this section before publishing)
-
-Fill in before tagging the submission snapshot:
-
-- `[TAG_NAME]` — submission tag (e.g., `paper1-submission-2026-05-22` or `submission-microbial-genomics`).
-- `[FULL_40_CHAR_SHA]` — commit hash, fill in after first commit.
-- `[YYYY-MM-DD]` — commit date.
-- `[https://...releases/tag/TAG_NAME]` — release URL.
-- `[X.Y.Z]`, `[renv lockfile location]`, `[OS_VERSION]` — reproducibility metadata.
-- `[PRJNA######]` — NCBI SRA BioProject accession.
-- `[DOI]` (Zenodo) — once Zenodo snapshot created.
-- `[DOI]` (manuscript) — once accepted/published.
-- `[EMAIL]` — corresponding author email.
-- `[LICENSE_NAME]` — choose license, add `LICENSE` file.
