@@ -1,5 +1,5 @@
 # =============================================================================
-# Makefile — Paper 1 (Microbial Genomics) reproducibility entry point
+# Makefile — Paper 1 reproducibility entry point
 #
 # Convenience wrapper around run_paper1.R. The manuscript primary spec is
 # hardcoded in run_paper1.R; this file provides named targets for stage
@@ -25,7 +25,7 @@ TAG := snv_only_ppe_excluded_lex
 .DEFAULT_GOAL := help
 
 help:
-	@echo "Paper 1 (Microbial Genomics) reproducibility targets:"
+	@echo "Paper 1 reproducibility targets:"
 	@echo ""
 	@echo "Full reproduction:"
 	@echo "  make all           Run entire pipeline (prep -> application)"
