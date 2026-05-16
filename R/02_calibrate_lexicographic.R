@@ -1,8 +1,7 @@
 # =============================================================================
 # 02_calibrate_lexicographic.R
 #
-# Lexicographic calibration -- canonical Stage 1 selector (post 2026-05-03 lex
-# revert; lex is canonical primary, Pareto is parallel sensitivity).
+# Lexicographic calibration -- canonical Stage 1 selector 
 #
 # Three-tier evidentiary ladder (no sentinel; all real-grid cells):
 #   looser  : grid-picked by minimum stringency among top-K candidates,
