@@ -4,14 +4,6 @@ This repository accompanies the manuscript in preparation *"Replicate-anchored c
 
 The work develops and validates a multi-criteria, lexicographically ranked, bootstrap-stabilized calibration framework for per-specimen intra-host single-nucleotide variant (iSNV) detection in *M. tuberculosis* whole-genome sequencing. Within-patient replicate sputum pairs from a pre-treatment TB cohort in Accra, Ghana, are scored across the joint (DP, AD, MAF) grid and ranked by reproducibility. Resulting thresholds are reported as a three-tier sensitivity ladder and applied to the full 97-patient cohort.
 
-## Submission snapshot
-
-The repository state at manuscript submission is tagged **`[name]`** (commit [commit id], dated 202605xx). All results, figures, and tables in the submitted manuscript can be reproduced from the code at this snapshot.
-
-GitHub release: https://github.com/.....
-
-Zenodo archive (post-acceptance): `[DOI]`
-
 ## What was done
 
 We defined the iSNV detection rule by three thresholds on read depth (DP), alternate-allele support (AD₁), and minor allele frequency (MAF), with MAF_max fixed at 0.50. Calibration used **169 within-visit replicate pairs collected at the pre-treatment timepoint (M0) from 67 patients**. A 612-cell grid (DP ∈ {40…200}, AD₁ ∈ {3…8}, MAF_min ∈ {0.02, 0.03, 0.05, 0.10, 0.15, 0.20}) was scored on six pair-level concordance metrics and ranked under a lexicographic selector minimizing the proportion of pairs with both specimens silent and maximizing reproducibility. Selection stability was quantified by **B = 1,000 nonparametric pair-level bootstrap resamples**, defining a Looser/Primary/Tighter sensitivity ladder.
@@ -37,7 +29,7 @@ To reproduce: clone the repository, install the listed package versions and run 
 
 - **Raw sequencing reads** (282 paired-end Illumina WGS samples) deposited at NCBI SRA under BioProject `PRJNA1466981`. Per-sample accessions and metadata in `Supplementary_Data_S1.csv`.
 - **Reference genome:** *M. tuberculosis* H37Rv, GenBank accession NC_000962.3.
-- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data/processed/`.
+- **Processed data tables** (calibration grid output, full variant call tables, derived analytic frames) included in this repository under `data_derived`.
 
 ## Repository structure
 
@@ -89,7 +81,7 @@ To reproduce: clone the repository, install the listed package versions and run 
 
 If you use this work, please cite:
 
-> Séraphin MN, Afriyie-Mensah JS, Asare-Baah M, Chariker J, Domotey C, Kwarteng E, Zoungrana M, Mireku Appah S, Ganu H, Amo Omari M. Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing. DOI: `[DOI when assigned]`
+> Séraphin MN, Afriyie-Mensah JS, Asare-Baah M, Chariker J, Domotey C, Kwarteng E, Zoungrana M, Mireku Appah S, Ganu H, Amo Omari M. Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing. DOI: `10.5281/zenodo.20246996`
 
 
 ## Funding
@@ -104,8 +96,3 @@ Approved by the Institutional Review Board of the University of Florida (IRB2020
 
 Corresponding author: **Marie Nancy Séraphin**, Department of Epidemiology, College of Public Health and Health Professions, College of Medicine, University of Florida, Gainesville, FL, USA.
 Email:nseraphin@ufl.edu
-
-## License
-
-MIT, CC-BY-4.0 — see `LICENSE` file. 
----
