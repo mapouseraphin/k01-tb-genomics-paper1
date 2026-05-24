@@ -1,4 +1,4 @@
-# Paper 1 — Replicate-Anchored iSNV Detection Calibration in *Mycobacterium tuberculosis*
+# Replicate-Anchored iSNV Detection Calibration in *Mycobacterium tuberculosis*
 
 This repository accompanies the manuscript in preparation *"Replicate-anchored calibration of within-host single nucleotide variant detection in Mycobacterium tuberculosis whole genome sequencing"* (Séraphin et al., May 2026).
 
