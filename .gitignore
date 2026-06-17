@@ -1,8 +1,15 @@
 # =============================================================================
-# .gitignore — Paper 1 (Microbial Genomics) repository
+# .gitignore — Paper 1 repository
 # =============================================================================
 
 # ---- Sensitive sequencing data — NEVER commit -------------------------------
+BED/
+gh_clean_wgs_data/
+gh_raw_epi_data/
+gh_raw_wgs_data/
+R/deprecate/
+R/diagnostics/
+data/
 data_raw/
 *.fastq
 *.fastq.gz
@@ -20,6 +27,8 @@ data_raw/
 *.tbi
 *.idx
 *.rds
+*.csv
+*.xlsx
 
 # ---- Pipeline-generated, large, regenerable ---------------------------------
 data_derived/
@@ -41,6 +50,21 @@ paper1_manifest.sha256
 .Renviron
 .Rproj.user/
 *.Rproj
+.ipynb_checkpoints/
+
+# --- Protected metadata and identifiers (do not commit) ---
+*meta*
+*metadata*
+*gis*
+*coord*
+*latlon*
+*lat_lon*
+*hiv*
+*clinical*
+*dates*
+gh_wgs_meta*
+gh_wgs_epi_meta*
+ghana_isnv*.rds
 
 # ---- renv (R package management) --------------------------------------------
 # Keep renv.lock and renv/activate.R; ignore everything else under renv/
@@ -64,6 +88,7 @@ renv/sandbox/
 .AppleDouble
 .LSOverride
 Thumbs.db
+*~
 Desktop.ini
 ehthumbs.db
 $RECYCLE.BIN/
